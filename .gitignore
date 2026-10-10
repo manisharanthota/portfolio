@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+
+# Private / reference material — never publish
+ms_docs/
+ref/
+
+# Local editor/agent config
+.claude/

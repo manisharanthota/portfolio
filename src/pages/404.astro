@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { name } from '../data/site';
+---
+<Base title={`Not found · /${name}/`} description="This page doesn't exist.">
+  <PageHeader title="Page not found" />
+
+  <main class="w-full max-w-[38rem] flex-1">
+    <p class="notice">This page doesn’t exist. Try one of the links above.</p>
+  </main>
+</Base>

@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { name } from '../data/site';
+import { articles } from '../data/writing';
+import { linkAttrs } from '../utils/links';
+---
+<Base title={`Writing · /${name}/`}>
+  <PageHeader title="Writing" />
+
+  <main class="w-full max-w-[38rem] flex-1">
+    <h2 class="section-heading">Writing</h2>
+
+    <p class="notice">Some articles are in drafts and will be posted here.</p>
+
+    {articles.length > 0 && (
+      <ul class="mt-10 space-y-4">
+        {articles.map((article) => (
+          <li class="flex flex-wrap items-baseline justify-between gap-x-4">
+            <a class="font-link" href={article.href} {...linkAttrs(article.href)}>{article.title}</a>
+            <span class="text-sm opacity-60">{article.date}</span>
+          </li>
+        ))}
+      </ul>
+    )}
+  </main>
+</Base>

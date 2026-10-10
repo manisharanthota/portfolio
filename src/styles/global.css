@@ -1,0 +1,103 @@
+@import "tailwindcss";
+@import "@fontsource/unica-one/400.css";
+@import "@fontsource/open-sans/400.css";
+
+@theme {
+  --color-canvas: #ffffff;
+  --color-ink: #181819;
+  --color-muted: #898989;
+
+  --font-display: "Unica One", cursive;
+  --font-body: "Trebuchet MS", Verdana, "Segoe UI", Candara, "Lucida Grande", Tahoma, sans-serif;
+  --font-link: "Open Sans", sans-serif;
+
+  --animate-fade-in: fade-in 1s ease-out both;
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-canvas: #181819;
+    --color-ink: #efefef;
+  }
+}
+
+html {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+}
+
+a {
+  transition: color 0.4s ease-out;
+}
+a:hover {
+  color: var(--color-muted);
+}
+
+/* Nav: hovering one link keeps it dark and fades its siblings. */
+.nav-links a {
+  opacity: 0.8;
+  transition: opacity 200ms ease;
+}
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: inherit;
+  opacity: 1;
+}
+.nav-links:has(a:hover, a:focus-visible) a:not(:hover, :focus-visible) {
+  opacity: 0.3;
+}
+
+/* About page section headings. */
+.section-heading {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 15%, transparent);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Skills render as one wrapping line per category, separated by middots. */
+.skill-list li {
+  display: inline;
+}
+.skill-list li:not(:last-child)::after {
+  content: " · ";
+  opacity: 0.5;
+}
+
+/* Quiet notice box, e.g. on /writing. */
+.notice {
+  padding: 1rem 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--color-ink) 15%, transparent);
+  font-size: 0.95rem;
+  font-style: italic;
+  opacity: 0.75;
+}
+
+/* Clear keyboard focus ring on every link. */
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Footer and project links: at least 24px tall so they're easy to tap on phones. */
+footer a,
+.tap-target {
+  display: inline-block;
+  padding-block: 0.25rem;
+}

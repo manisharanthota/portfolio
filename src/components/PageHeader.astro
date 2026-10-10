@@ -1,0 +1,22 @@
+---
+// Header for inner pages: the /Name/ title linking home, plus a horizontal nav.
+// `title` becomes the page's (visually hidden) <h1> for screen readers.
+import { name, navLinks } from '../data/site';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const nav = [{ label: 'Home', href: '/' }, ...navLinks];
+const current = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+<header class="pt-16 pb-12 text-center">
+  <h1 class="sr-only">{title}</h1>
+  <a href="/" class="font-display text-[2.4rem] leading-[1.6] font-bold uppercase">/{name}/</a>
+  <nav class="nav-links font-link mt-3 flex flex-wrap justify-center gap-x-6 text-lg">
+    {nav.map((link) => (
+      <a href={link.href} aria-current={link.href === current ? 'page' : undefined}>{link.label}</a>
+    ))}
+  </nav>
+</header>

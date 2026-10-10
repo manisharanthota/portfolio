@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import GridBackground from '../components/GridBackground.astro';
+import { name, navLinks } from '../data/site';
+
+const tagline = 'I’m just a human being…';
+---
+<Base title={`/${name}/`}>
+  <GridBackground slot="background" />
+
+  <main class="flex flex-1 flex-col justify-center text-center">
+    <h1 class="font-display text-[2.4rem] leading-[1.6] font-bold uppercase">/{name}/</h1>
+    <p class="mb-[1.575rem] text-[1.05rem] italic opacity-90">{tagline}</p>
+
+    <nav class="nav-links font-link flex flex-col items-center text-2xl leading-[1.6]">
+      {navLinks.map((link) => (
+        <a class="mt-3" href={link.href}>{link.label}</a>
+      ))}
+    </nav>
+  </main>
+</Base>

@@ -1,0 +1,15 @@
+---
+// Full-viewport animated background: a faint grid with a few
+// "runners" that travel along grid lines and leave fading trails.
+---
+<canvas
+  id="grid-bg"
+  class="pointer-events-none fixed inset-0 -z-10 h-full w-full opacity-35"
+  aria-hidden="true"
+></canvas>
+
+<script>
+  import { startGridBackground } from '../scripts/grid-background';
+  const canvas = document.getElementById('grid-bg') as HTMLCanvasElement | null;
+  if (canvas) startGridBackground(canvas);
+</script>

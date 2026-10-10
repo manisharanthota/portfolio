@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+import { name, footerLinks } from '../data/site';
+import { linkAttrs } from '../utils/links';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = `${name}: data engineer building reliable pipelines. Projects, writing and work experience.`,
+} = Astro.props;
+const year = new Date().getFullYear();
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{title}</title>
+  </head>
+  <body class="antialiased">
+    {/* Pages opt into a decorative background here; the default is plain. */}
+    <slot name="background" />
+
+    <div class="mx-auto flex min-h-svh max-w-[93%] flex-col items-center motion-safe:animate-fade-in">
+      <slot />
+
+      <footer class="pt-12 pb-3.5 text-center text-[0.9rem] opacity-60">
+        <p>
+          © {year} <a class="font-link" href={footerLinks.name} {...linkAttrs(footerLinks.name)}>{name}</a>{' · '}
+          <a class="font-link" href={footerLinks.github} {...linkAttrs(footerLinks.github)}>GitHub</a>{' · '}
+          <a class="font-link" href={footerLinks.email}>Email</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
