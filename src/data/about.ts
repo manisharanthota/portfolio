@@ -1,5 +1,12 @@
 // Content for /about. Edit freely; the page renders whatever is here.
 
+// Intro paragraphs shown above the Work section.
+export const intro = [
+  "I'm a data engineer focused on building data pipelines, infrastructure, tooling and automation.",
+  "These days I'm working at the intersection of AI and automation, and helping small businesses turn their data into practical solutions that save time.",
+  'Outside work, I enjoy writing and pushing myself physically and mentally. I like taking on hard problems and figuring them out.',
+];
+
 export const work = [
   {
     company: 'Commerce Bank',

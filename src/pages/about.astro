@@ -2,12 +2,16 @@
 import Base from '../layouts/Base.astro';
 import PageHeader from '../components/PageHeader.astro';
 import { name } from '../data/site';
-import { work, skills, solidarity } from '../data/about';
+import { intro, work, skills, solidarity } from '../data/about';
 ---
 <Base title={`About · /${name}/`}>
   <PageHeader title="About" />
 
   <main class="w-full max-w-[38rem] flex-1 space-y-16">
+    <div class="space-y-4 opacity-90">
+      {intro.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+
     <section aria-labelledby="work">
       <h2 id="work" class="section-heading">Work</h2>
       <ol class="space-y-10">
