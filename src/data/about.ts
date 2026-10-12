@@ -61,6 +61,7 @@ export const skills = [
   { category: 'Orchestration', items: ['Apache Airflow', 'dbt', 'Azure Data Factory', 'Databricks Workflows'] },
   { category: 'Databases', items: ['SQL Server', 'Oracle', 'PostgreSQL', 'MySQL'] },
   { category: 'BI', items: ['Tableau', 'Power BI'] },
+  { category: 'AI', items: ['Claude Code', 'Cursor', 'Groq', 'Gemini API', 'RAG (retrieval-augmented generation)'] },
   { category: 'DevOps & Testing', items: ['Git', 'Azure DevOps (CI/CD)', 'Terraform', 'Docker', 'PyTest', 'Jira'] },
 ];
 
