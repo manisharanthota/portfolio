@@ -23,6 +23,6 @@ export const others: Project[] = [
   {
     name: 'Rejection Pick-Me-Up Agent',
     description:
-      'An AI agent that reads my inbox and sends me a positive quote whenever a job rejection email arrives.',
+      'An AI agent built on Meta’s Muse and connected to my Gmail. A watchdog checks my inbox every hour, and when a job rejection email lands, the agent sends me a positive quote to keep me going.',
   },
 ];
