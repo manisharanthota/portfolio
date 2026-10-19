@@ -16,6 +16,12 @@ export const featured: Project[] = [
 
 export const others: Project[] = [
   {
+    name: 'Funny Chatbot',
+    description:
+      'A witty, sarcastic command-line chatbot built with the Claude API, with streaming replies, conversation memory and a token budget to keep costs in check.',
+    href: 'https://github.com/manisharanthota/funny-chatbot',
+  },
+  {
     name: 'Job Application Email Classifier',
     description:
       'Automatically sorts my job application emails and logs them to Google Sheets, using the Gemini API.',
