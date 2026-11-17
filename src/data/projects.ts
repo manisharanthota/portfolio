@@ -12,6 +12,12 @@ export const featured: Project[] = [
       'A live timer tracking time since the last shooting, burglary or killing in St. Louis, built from local news and official police reports.',
     href: 'https://stlcrimetimer.com',
   },
+  {
+    name: 'NYC Taxi Data Migration',
+    description:
+      'An on-prem to Azure migration of ~121M NYC taxi trips. A SQL Server database mimics production, receiving ~100K new rows at a set time every day. A full load, then daily watermark-based incremental loads, move the data through Azure Data Factory into a Databricks bronze/silver/gold lakehouse, validated against source control totals.',
+    href: 'https://github.com/manisharanthota/nyc-taxi-data-migration',
+  },
 ];
 
 export const others: Project[] = [
